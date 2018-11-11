@@ -30,8 +30,7 @@ setuptools.setup(
     py_modules=[
         os.path.splitext(os.path.basename(path))[0] for path in glob("src/*.py")
     ],
-    install_requires=[
-    ],
+    install_requires=[],
     tests_require=[
         "pytest-cov>=2.5.1",
         "pytest-mock>=1.7.1",
