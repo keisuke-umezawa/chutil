@@ -42,7 +42,11 @@ build:
 	python setup.py build
 
 dist:
+	rm -r dist
 	python setup.py sdist
+
+upload:
+	twine upload dist/*
 
 jupyter:
 	bash -c "PYTHONPATH=`pwd`/src:${PYTHONPATH} jupyter notebook"
