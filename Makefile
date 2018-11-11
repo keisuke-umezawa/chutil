@@ -1,4 +1,4 @@
-.PHONY:	jupyter format_black
+.PHONY:	jupyter format_black build dist
 
 IMAGE_NAME=alpacadb/alpaca-containers:forecast-exp-v0.0.2
 
