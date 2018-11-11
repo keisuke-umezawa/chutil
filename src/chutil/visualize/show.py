@@ -5,12 +5,10 @@ from IPython.display import Image, display
 
 
 def show_test_performance(
-    model: chainer.Chain, test: Iterable[Any], enable_cupy: bool, batchsize: int
+    model: chainer.Chain, test: Iterable[Any], *, device: int = 0, batchsize: int = 256
 ) -> None:
-    device = -1
-    if enable_cupy:
+    if device >= 0:
         model.to_gpu()
-        device = 0
     test_iter = chainer.iterators.SerialIterator(
         test, batchsize, repeat=False, shuffle=False
     )
